@@ -76,10 +76,14 @@ public class ConstructorDeClase {
 	public void imprimir(String ruta){
 		try {
 			BufferedWriter escribir= new BufferedWriter(new FileWriter(ruta));
-			Collections.shuffle(listaDeObjetos);
+			//Collections.shuffle(listaDeObjetos);
+			String getis="get";
 			for(int i=0; i<listaDeObjetos.size(); i++){
 				for(int j=0; j<tipoAtributos.length; j++){
-					Method mm=listaDeObjetos.get(i).getClass().getMethod("get"+inicialMayuscula(tipoAtributos[j].getName()));
+					if(tipoAtributos[j].getType().getName().equals("java.lang.Boolean")|| tipoAtributos[j].getType().getName().equals("boolean") ){
+						getis="set";
+					}
+					Method mm=listaDeObjetos.get(i).getClass().getMethod(getis+inicialMayuscula(tipoAtributos[j].getName()));
 					if(tipoAtributos[j].getType().getName().equals("java.util.Date")){
 						SimpleDateFormat formatoDelTexto= new SimpleDateFormat(formatoDate);
 						String fecha= formatoDelTexto.format(mm.invoke(listaDeObjetos.get(i)));

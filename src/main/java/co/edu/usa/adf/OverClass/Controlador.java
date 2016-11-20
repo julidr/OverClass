@@ -55,5 +55,9 @@ public class Controlador {
 	public ArrayList<Object> getListaDeObjetos(){
 		return cda.getListaDeObjectos();
 	}
+	
+	public void setListaDeObjetos(ArrayList<Object> lista){
+		cda.setListaDeObjetos(lista);
+	}
 
 }

@@ -8,7 +8,7 @@ public class Inicio {
 
 	public static void main(String[] args) {
 		try {
-			ctrl.cargarInformacionArchivos("descripcion4.txt");
+			ctrl.cargarInformacionArchivos("descriptor.txt");
 			ArrayList<String> infoArchivos= new ArrayList<String>();
 			infoArchivos= ctrl.getInformacionArchivos();
 			System.out.println(infoArchivos.get(0));

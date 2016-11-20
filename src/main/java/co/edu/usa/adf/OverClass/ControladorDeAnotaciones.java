@@ -18,6 +18,7 @@ public class ControladorDeAnotaciones {
 				lectorAnotacionesDeCampo(clase);
 			}
 			else{
+				System.out.println(clase.getName());
 				throw new TomateException("La Clase no tiene la anotacion Tomate");
 			}
 		}
